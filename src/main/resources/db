@@ -1,0 +1,45 @@
+CREATE TABLE crypto_trading_transaction (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT,
+    pair VARCHAR(10),
+    order_type VARCHAR(10),
+    quantity DECIMAL(18, 8),
+    price DECIMAL(18, 8),
+    total DECIMAL(18, 8),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by  VARCHAR(50),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_by  VARCHAR(50),
+)
+
+CREATE TABLE crypto_price (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    trading_pair VARCHAR(10),
+    bid_price DECIMAL(18, 8),
+    ask_price DECIMAL(18, 8),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by  VARCHAR(50),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_by  VARCHAR(50),
+)
+
+
+CREATE TABLE crypto_wallet (
+    user_id BIGINT PRIMARY KEY,
+    usdt_balance DECIMAL(18, 8),
+    eth_balance DECIMAL(18, 8),
+    btc_balance DECIMAL(18, 8),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by  VARCHAR(50),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_by  VARCHAR(50),
+)
+
+CREATE TABLE crypto_users (
+    id BIGINT PRIMARY KEY,
+    username VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_by  VARCHAR(50),
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_by  VARCHAR(50),
+)
