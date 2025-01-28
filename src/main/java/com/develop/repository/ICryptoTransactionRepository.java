@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ICryptoTransactionRepository extends JpaRepository<CryptoTransaction, Long> {
     List<CryptoTransaction> findByUserId(Long userId);
-    List<CryptoTransaction> findByUserIdAndTradingPair(Long userId, String tradingPair);
+    List<CryptoTransaction> findByUserIdAndSymbol(Long userId, String tradingPair);
 }

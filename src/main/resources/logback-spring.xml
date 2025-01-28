@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+        <Pattern>
+            %X{traceId} %d{ISO8601} %cyan(${HOSTNAME}) %highlight(%-5level) %msg - %yellow(%logger) %n%throwable
+        </Pattern>
+    </layout>
+</appender>
+<appender name="async" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="Console"/>
+</appender>
+<root level="info">
+    <appender-ref ref="async"/>
+</root>
+</configuration>
+
+

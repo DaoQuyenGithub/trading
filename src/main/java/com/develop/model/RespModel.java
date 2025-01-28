@@ -1,7 +1,6 @@
 package com.develop.model;
 
 import com.develop.constant.RespCode;
-import com.develop.mapper.JsonUtils;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 
 @Data
@@ -113,14 +111,14 @@ public class RespModel<T> {
     public Boolean isSuccess() {
         return RespCode.SUCCESS.name().equals(this.code) || "00".equals(this.code) || "000".equals(this.code);
     }
-
-    public static <T> RespModel<T> from(Objects data) {
-        return JsonUtils.convertValue(data, RespModel.class);
-    }
-
-    public static <T> RespModel<T> from(String data) {
-        return JsonUtils.toObject(data, RespModel.class);
-    }
+//
+//    public static <T> RespModel<T> from(Objects data) {
+//        return JsonUtils.convertValue(data, RespModel.class);
+//    }
+//
+//    public static <T> RespModel<T> from(String data) {
+//        return JsonUtils.toObject(data, RespModel.class);
+//    }
 
 }
 
