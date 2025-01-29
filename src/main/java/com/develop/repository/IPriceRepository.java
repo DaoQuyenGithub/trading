@@ -26,6 +26,6 @@ public interface IPriceRepository extends JpaRepository<Price, Long> {
     List<Price> findLatestPriceBySymbol();
 
 
-    @Query(value = "SELECT p FROM Price p WHERE p.symbol = :symbol ORDER BY p.updated_at DESC", nativeQuery = true)
+    @Query(value = "SELECT TOP 1 * FROM crypto_price WHERE symbol = :symbol ORDER BY updated_at DESC", nativeQuery = true)
     Optional<Price> findLatestBySymbol(String symbol);
 }

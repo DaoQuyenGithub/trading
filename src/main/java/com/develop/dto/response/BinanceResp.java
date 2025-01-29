@@ -1,5 +1,4 @@
-package com.develop.dto;
-
+package com.develop.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +9,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class PriceResp {
+public class BinanceResp {
     private String symbol;
     private BigDecimal bidPrice;
-    private BigDecimal bestBuyPrice;
+    private Double bidQty;
+    private BigDecimal askPrice;
+    private Double askQty;
 }

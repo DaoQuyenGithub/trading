@@ -31,16 +31,13 @@ public class RespModel<T> {
     private RespErrorModel error;
 
     private String traceId;
-    private String requestid;
 
     public RespModel(Enum<?> code) {
         this.code = code.name();
-//        this.description = I18nService.getMessage(code.name());
     }
 
     public RespModel(Enum<?> code, T data) {
         this.code = code.name();
-//        this.description = I18nService.getMessage(code.name());
         this.data = data;
     }
 
@@ -55,30 +52,18 @@ public class RespModel<T> {
         this.data = resData;
     }
 
-    public RespModel(Enum<?> code, String resMessage, String requestid, String traceId) {
-        this.code = code.name();
-        this.description = resMessage;
-        this.traceId = traceId;
-        this.requestid = requestid;
-    }
 
     public RespModel(String code, String resMessage) {
         this.code = code;
         this.description = resMessage;
     }
 
-    public RespModel(String code, String resMessage, T resData) {
+    public RespModel(String code, String resMessage, String resData) {
         this.code = code;
         this.description = resMessage;
-        this.data = resData;
+        this.traceId = resData;
     }
 
-    public RespModel(String code, String resMessage, String requestid, String traceId) {
-        this.code = code;
-        this.description = resMessage;
-        this.traceId = traceId;
-        this.requestid = requestid;
-    }
 
     public static <T> RespModel<T> success() {
         return new RespModel<>(RespCode.SUCCESS);

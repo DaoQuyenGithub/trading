@@ -1,48 +1,27 @@
-package com.develop.entity;
+package com.develop.dto.response;
 
 import com.develop.constant.OrderType;
 import com.develop.entity.base.Auditable;
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@Entity
-@Table(name = "crypto_transaction")
-public class CryptoTransaction extends Auditable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@NoArgsConstructor
+@AllArgsConstructor
+public class CryptoTransactionResp extends Auditable {
     private Long id;
-
-    @Column(nullable = false)
     private Long userId;
-
-    @Column
     private String symbol;
-
-    @Enumerated(EnumType.STRING)
-    @Column
     private OrderType orderType;
-
-    @Column
     private BigDecimal quantity;
-
-    @Column
     private BigDecimal price;
-
-    @Column
     private BigDecimal total;
-
-    @Column
     private BigDecimal currentBalanceUsdt;
-
-    @Column
     private BigDecimal currentBalanceEth;
-
-    @Column
     private BigDecimal currentBalanceBtc;
-
 }

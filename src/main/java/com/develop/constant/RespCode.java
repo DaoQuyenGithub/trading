@@ -10,6 +10,7 @@ public enum RespCode {
     NOT_FOUND,
     ERR_DUPLICATE,
     ERR_DATA_INVALID,
-    UNKNOWN;
+    NOT_SUPPORT,
+    ERR_UNKNOWN;
 
 }

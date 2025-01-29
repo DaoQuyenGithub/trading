@@ -1,6 +1,6 @@
 package com.develop.service.client;
 
-import com.develop.dto.BinanceResp;
+import com.develop.dto.response.BinanceResp;
 import feign.RequestLine;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.develop.mapper;
 
-import com.develop.dto.response.PriceResp;
-import com.develop.entity.Price;
+import com.develop.dto.response.CryptoTransactionResp;
+import com.develop.entity.CryptoTransaction;
 import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
@@ -11,10 +11,10 @@ import java.util.List;
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy =  ReportingPolicy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
-public interface IPriceMapper {
-    IPriceMapper INSTANCE = Mappers.getMapper(IPriceMapper.class);
+public interface ICryptorTransactionMapper {
+    ICryptorTransactionMapper INSTANCE = Mappers.getMapper(ICryptorTransactionMapper.class);
 
-    PriceResp toEntity(Price source);
+    CryptoTransactionResp toResp(CryptoTransaction source);
 
-    List<PriceResp> toEntity(List<Price> source);
+    List<CryptoTransactionResp> toResp(List<CryptoTransaction> source);
 }

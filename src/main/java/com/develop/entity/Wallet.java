@@ -16,14 +16,15 @@ public class Wallet extends Auditable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private Long userId;
 
-    @Column(nullable = false, precision = 20, scale = 2)
-    private BigDecimal balanceUsdt = new BigDecimal(50000 );
+    @Column
+    private BigDecimal balanceUsdt;
 
-    @Column(nullable = false, precision = 20, scale = 8)
-    private BigDecimal balanceEth = BigDecimal.ZERO;
+    @Column
+    private BigDecimal balanceEth;
 
-    @Column(nullable = false, precision = 20, scale = 8)
-    private BigDecimal balanceBtc = BigDecimal.ZERO;
+    @Column
+    private BigDecimal balanceBtc;
 }
